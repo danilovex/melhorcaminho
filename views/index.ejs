@@ -1,0 +1,59 @@
+<%- include layouts/header.ejs %>
+<link href="/../css/pages/index.css" rel="stylesheet">
+</head>
+	<body>
+	<div class="menu-masthead">
+      <div class="container">
+        <nav class="menu-nav">
+            <a class="menu-nav-item active" href="#" ><img src="/../images/logo.png" height="50px" /><b> Melhor Caminho</b></a>
+        <!--
+          <a class="menu-nav-item" href="#">Ambulâncias</a>
+          <a class="menu-nav-item" href="chamados">Ocorrências ativas</a>
+		  <a class="menu-nav-item navbar-right">Sair</a>
+          <a class="menu-nav-item navbar-right" href="#">Olá João!</a>
+        -->
+        </nav>
+      </div>
+    </div>
+	<div class="container body-index">
+		<div class="row">
+			<div class="col-md-3">
+                <div class="alert alert-info" id="passo" role="alert">
+                    Informe os endereços abaixo.
+                </div>
+                <form onsubmit="return false;">
+                    <label for="txtEnderecoPartida">Endereço de partida:</label>
+                    <div class="form-group">
+                        <input type="text" class="form-control" id="txtEnderecoPartida" name="txtEnderecoPartida" value="R. Cruzeiro, 213 - Bosque dos Eucaliptos" />
+                    </div>
+                    <label for="txtEnderecoChegada">Endereço de chegada:</label>
+                    <div class="form-group">                        
+                        <input type="text" id="txtEnderecoChegada" class="form-control" name="txtEnderecoChegada" value="Av. Shishima Hifumi, 2.911 Urbanova" />
+                    </div>                    
+                    <label>Pontos de embarque:</label>
+                    <div class="form-group">
+                        <div id="listaPontos">
+                            <input type="text" class="form-control pontos-embarque" value="Rua Machado de Assis, 558 – Monte Castelo" />
+                            <input type="text" class="form-control pontos-embarque" value="Rua Manoel Fiel Filho, 254 – Bosque dos Eucaliptos" />
+                            <input type="text" class="form-control pontos-embarque" value="Rua Carlos Carnevalli, 33 – Jardim Satelite" />                            
+                        </div>                    
+                    </div>    
+                    <button type="button" class="btn btn-info" onclick="index.novoPonto();"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span> Novo Ponto</button>
+
+                    <button type="submit" id="btnCalcularRota" onclick="mapa.calcularRota();" class="btn btn-primary">Calcular Rota</button>
+                </form>
+            </div>
+			<div class="col-md-9">
+            		<div id="map"></div>            
+                    <div id="trajeto-texto"></div>
+            </div>
+		</div>
+	</div>
+<%- include layouts/footer.ejs %>
+        <script type="text/javascript" src="/../js/pages/index.js"></script>
+<script>
+    $(document).ready(function(){
+        index.init();        
+    });
+</script>
+</html>
