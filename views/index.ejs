@@ -5,7 +5,7 @@
 	<div class="menu-masthead">
       <div class="container">
         <nav class="menu-nav">
-            <a class="menu-nav-item active" href="#" ><img src="/../images/logo.png" height="50px" /><b> Melhor Caminho</b></a>
+            <a class="menu-nav-item active" href="#" ><img src="/../images/logo2.png"/></a>
         <!--
           <a class="menu-nav-item" href="#">Ambulâncias</a>
           <a class="menu-nav-item" href="chamados">Ocorrências ativas</a>
@@ -31,16 +31,33 @@
                         <input type="text" id="txtEnderecoChegada" class="form-control" name="txtEnderecoChegada" value="Av. Shishima Hifumi, 2.911 Urbanova" />
                     </div>                    
                     <label>Pontos de embarque:</label>
-                    <div class="form-group">
+                    <div class="form-group info-gerar-rota">
                         <div id="listaPontos">
                             <input type="text" class="form-control pontos-embarque" value="Rua Machado de Assis, 558 – Monte Castelo" />
                             <input type="text" class="form-control pontos-embarque" value="Rua Manoel Fiel Filho, 254 – Bosque dos Eucaliptos" />
-                            <input type="text" class="form-control pontos-embarque" value="Rua Carlos Carnevalli, 33 – Jardim Satelite" />                            
+                            <input type="text" class="form-control pontos-embarque" value="Rua Carlos Carnevalli, 33 – Jardim Satelite" />
+                            <input type="text" class="form-control pontos-embarque" value="Rua Castor, 25 - Jardim Satélite" />
+                            <input type="text" class="form-control pontos-embarque" value="Rua Ilha do Sul, 299 - Jardim America, 12235-490" />
+                            <input type="text" class="form-control pontos-embarque" value="Avenida Heitor vila Lobos, 555 – Vila Ema" />
+                            <input type="text" class="form-control pontos-embarque" value="Avenida Doutor Mario Galvão, 252 – Jardim Bela Vista" />
+                            <input type="text" class="form-control pontos-embarque" value="Rua Professor Jacir Madureira, 121 - Santana" />                           
                         </div>                    
                     </div>    
-                    <button type="button" class="btn btn-info" onclick="index.novoPonto();"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span> Novo Ponto</button>
-
-                    <button type="submit" id="btnCalcularRota" onclick="mapa.calcularRota();" class="btn btn-primary">Calcular Rota</button>
+                    <button type="button" class="btn btn-info info-gerar-rota" onclick="index.novoPonto();"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span> Novo Ponto</button>
+                    <button type="submit" id="btnCalcularRota" onclick="mapa.calcularRota();" class="btn btn-primary info-gerar-rota">Calcular Rota</button>
+                    <div class="form-group info-resultado-rota">
+                        <table class="table table-striped">
+                            <thead>
+                                <tr>
+                                    <th>Ordem</th>
+                                    <th>Endereço</th>
+                                </tr>
+                            </thead>
+                            <tbody>                            
+                            </tbody>                            
+                        </table>
+                        <button type="button" class="btn btn-default info-resultado-rota" onclick="location.reload();">Nova Pesquisa</button>
+                    </div>
                 </form>
             </div>
 			<div class="col-md-9">

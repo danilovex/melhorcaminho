@@ -1,6 +1,7 @@
 index = function(){
      var _init = function (){
         mapa.start();
+         $(".info-resultado-rota").hide();
     }
 	var _api_user_login = function (){
 			
@@ -34,11 +35,29 @@ index = function(){
             lista.push({location: item.value});
         });
         return lista;
-    }    
+    }
+    var _exibirListaCalculada = function (novaOrdem){
+        var novaOrdemEndereco = [];
+        $.each(novaOrdem, function (index, item){
+            console.log(item);
+            var enderecos = $(".pontos-embarque");
+            var endereco = enderecos[index];
+            novaOrdemEndereco.push({ordem: item, endereco: endereco.value });
+        });
+        for(i = 0; i <= novaOrdemEndereco.length; i++){
+            if(novaOrdemEndereco.length == i) break;
+            end = novaOrdemEndereco.filter(function (item){return item.ordem == i});
+            $("tbody").append("<tr><th scope='row'>"+end[0].ordem+"</th><td>"+end[0].endereco+"</td></tr>")                                 
+        }
+        //$(".info-gerar-rota").hide();
+        //$(".info-resultado-rota").show();
+        
+    }
 	return {
 		api_user_login: _api_user_login,
         novoPonto: _novoPonto,
         listarPontos: _listarPontos,
+        exibirListaCalculada: _exibirListaCalculada,
         init: _init
 	}
 }();

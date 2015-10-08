@@ -54,7 +54,8 @@ mapa = function(){
         travelMode: google.maps.TravelMode.DRIVING
       }, function(response, status) {
         if (status === google.maps.DirectionsStatus.OK) {
-          directionsDisplay.setDirections(response);
+            directionsDisplay.setDirections(response);
+            index.exibirListaCalculada(response.routes[0].waypoint_order);
         } else {
           window.alert('Directions request failed due to ' + status);
         }
