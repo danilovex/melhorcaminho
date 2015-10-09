@@ -30,6 +30,8 @@ mapa = function(){
         
         directionsDisplay.setMap(map);
         
+        directionsDisplay.setPanel(document.getElementById("trajeto-texto"));
+        
 		geocoder = new google.maps.Geocoder();
 		marker = new google.maps.Marker({
 			map: map,
@@ -55,9 +57,10 @@ mapa = function(){
       }, function(response, status) {
         if (status === google.maps.DirectionsStatus.OK) {
             directionsDisplay.setDirections(response);
-            index.exibirListaCalculada(response.routes[0].waypoint_order);
+            index.exibirListaCalculada(response.routes[0].legs);
         } else {
-          window.alert('Directions request failed due to ' + status);
+          //window.alert('Directions request failed due to ' + status);
+            window.alert('Algum endereço não pode ser localizado pelo Google, verifique os endereços!');
         }
       });
     }
