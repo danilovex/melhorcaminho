@@ -36,9 +36,15 @@ index = function(){
         return lista;
     }
     var _exibirListaCalculada = function (novaOrdem){
+        var alfabeto = ["B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z"]
+        
         $.each(novaOrdem, function (index, item){
-            $("tbody").append("<tr><th scope='row'>"+index+"</th><td>"+item.end_address+"</td></tr>");                                
+            if(novaOrdem.length-1 != index)
+                $("tbody").append("<tr><th scope='row'>"+alfabeto[index]+"</th><td>"+item.end_address+"</td></tr>");                                
         });
+        $("#txtEnderecoPartida").parent().html("<b>(A)</b> " + $("#txtEnderecoPartida").val());
+        $("#txtEnderecoChegada").parent().html("<b>("+alfabeto[novaOrdem.length-1]+")</b> " + $("#txtEnderecoChegada").val());
+        
         $(".info-gerar-rota").hide();
         $(".info-resultado-rota").show();
         
