@@ -6,22 +6,20 @@
       <div class="container">
         <nav class="menu-nav">
             <a class="menu-nav-item active" href="#" ><img src="/../images/logo2.png"/></a>
-        <!--
-          <a class="menu-nav-item" href="#">Ambulâncias</a>
-          <a class="menu-nav-item" href="chamados">Ocorrências ativas</a>
-		  <a class="menu-nav-item navbar-right">Sair</a>
-          <a class="menu-nav-item navbar-right" href="#">Olá João!</a>
-        -->
         </nav>
       </div>
     </div>
 	<div class="container body-index">
 		<div class="row">
 			<div class="col-md-3">
-                <div class="alert alert-info" id="passo" role="alert">
+                <div class="alert alert-info info-gerar-rota" id="passo" role="alert">
                     Informe os endereços abaixo.
                 </div>
-                <form onsubmit="return false;">                    
+                <form onsubmit="return false;">
+                    <label for="txtEnderecoPartida" class="info-gerar-rota">Horário de partida:</label>
+                    <div class="form-group info-gerar-rota">
+                        <input type="time" class="form-control" id="txtHorarioPartida" name="txtHorarioPartida" value="07:00" />
+                    </div>
                     <label for="txtEnderecoPartida">Endereço de partida:</label>
                     <div class="form-group">
                         <input type="text" class="form-control" id="txtEnderecoPartida" name="txtEnderecoPartida" value="" />
@@ -35,23 +33,24 @@
                         <div id="listaPontos">
                         </div>                    
                     </div>    
-                    <button type="button" class="btn btn-info info-gerar-rota" onclick="index.novoPonto();"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span> Novo Ponto</button>
+                    <button type="button" class="btn btn-info info-gerar-rota" onclick="index.novoPonto();"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span> Novo Ponto</button>                    
                     <button type="submit" id="btnCalcularRota" onclick="mapa.calcularRota();" class="btn btn-primary info-gerar-rota">Calcular Rota</button><br /><br />
-                    <a href="javascript:void(0);" class="info-gerar-rota" onclick="index.preencherDadosGeo();">Endereços Pré-definidos</a>
-                    <div class="form-group info-resultado-rota">
-                        <table class="table table-striped">
-                            <thead>
-                                <tr>
-                                    <th>Ordem</th>
-                                    <th>Endereço</th>
-                                </tr>
-                            </thead>
-                            <tbody>                            
-                            </tbody>                            
-                        </table>
-                        <button type="button" class="btn btn-default info-resultado-rota" onclick="location.reload();">Nova Pesquisa</button>
-                    </div>
+                    <a href="javascript:void(0);" class="lnk-endereco-geo info-gerar-rota" onclick="index.preencherDadosGeo();$(this).hide();">Endereços Pré-definidos</a>
                 </form>
+                <div class="form-group info-resultado-rota">
+                    <table class="table table-striped">
+                        <thead>
+                            <tr>
+                                <th>Ordem</th>
+                                <th>Horário</th>
+                                <th>Endereço</th>
+                            </tr>
+                        </thead>
+                        <tbody>                            
+                        </tbody>                            
+                    </table>
+                    <button type="button" class="btn btn-default" onclick="location.reload();">Nova Pesquisa</button>
+                </div>
             </div>
 			<div class="col-md-9">
             		<div id="map"></div>
