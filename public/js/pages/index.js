@@ -45,7 +45,7 @@ index = function(){
     var _preencherDadosGeo = function (){
         
         $("#txtEnderecoPartida").val("R. Cruzeiro, 213 - Bosque dos Eucaliptos");
-        $("#txtEnderecoChegada").val("Av. Shishima Hifumi, 2.911 Urbanova");
+        $("#txtEnderecoChegada").val("Av. Shishima Hifumi, 2911 Urbanova");
         _novoPonto("Rua Machado de Assis, 558 – Monte Castelo");
         _novoPonto("Rua Manoel Fiel Filho, 254 – Bosque dos Eucaliptos");
         _novoPonto("Rua Carlos Carnevalli, 33 – Jardim Satelite");
