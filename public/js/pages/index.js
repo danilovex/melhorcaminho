@@ -30,6 +30,8 @@ index = function(){
         
         $(".info-gerar-rota").hide();
         $(".info-resultado-rota").show();
+        $("#passo").html("<b>Rota Gerada!</b> Os endereços de embarque são re-organizados automaticamente para o melhor caminho a ser feito.");
+        $("#passo").removeClass("alert-info").addClass("alert-success");
         
     }
     var _preCalculoMinutos = function (x){
@@ -40,6 +42,13 @@ index = function(){
             minutes = "0"+minutes;
         
         return "00:"+minutes;
+        
+    }
+    var _trocarEndereco = function (){
+        var tempA = $("#txtEnderecoPartida").val();
+        var tempB = $("#txtEnderecoChegada").val();
+        $("#txtEnderecoPartida").val(tempB);
+        $("#txtEnderecoChegada").val(tempA);
         
     }
     var _preencherDadosGeo = function (){
@@ -88,6 +97,7 @@ index = function(){
         exibirListaCalculada: _exibirListaCalculada,
         preencherDadosGeo: _preencherDadosGeo,
         somaHora: _somaHora,
+        trocarEndereco: _trocarEndereco,
         init: _init
 	}
 }();

@@ -7,4 +7,7 @@
 .lnk-endereco-geo{
     margin-bottom: 10px;
 }
-
+.divisor{
+    border-bottom: 1px dashed gray;
+    margin-bottom: 10px !important;
+}
