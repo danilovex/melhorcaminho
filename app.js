@@ -10,12 +10,12 @@ var path = require('path');
 
 
 //load routes
-var customers = require('./routes/customers'); 
+var customers = require('./routes/customers');
 var api = require('./routes/api');
- 
+
 var app = express();
 
-var connection  = require('express-myconnection'); 
+var connection  = require('express-myconnection');
 var mysql = require('mysql');
 
 //criamos instancia do body-parser, usado nos handlers
@@ -41,13 +41,13 @@ if ('development' == app.get('env')) {
 
 /*------------------------------------------
     connection peer, register as middleware
-    type koneksi : single,pool and request 
+    type koneksi : single,pool and request
 -------------------------------------------*/
 
 app.use(
-    
+
     connection(mysql,{
-        
+
         host: 'localhost',
         user: 'root',
         password : 'mysql',
