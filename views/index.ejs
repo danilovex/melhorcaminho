@@ -1,5 +1,4 @@
 <%- include layouts/header.ejs %>
-<link href="/../css/pages/index.css" rel="stylesheet">
 </head>
 	<body>
 	<div class="menu-masthead">
@@ -26,19 +25,19 @@
                         <input type="text" class="form-control" id="txtEnderecoPartida" name="txtEnderecoPartida" value="" />
                     </div>
                     <div class="form-group">
-                        <button type="button" class="btn info-gerar-rota" onclick="index.trocarEndereco();"><span class="glyphicon glyphicon-refresh" aria-hidden="true"></span> Inverter Endereço</button>                   
-                    </div> 
+                        <button type="button" class="btn info-gerar-rota" onclick="index.trocarEndereco();"><span class="glyphicon glyphicon-refresh" aria-hidden="true"></span> Inverter Endereço</button>
+                    </div>
                     <label for="txtEnderecoChegada">Endereço de chegada:</label>
-                    <div class="form-group">                        
+                    <div class="form-group">
                         <input type="text" id="txtEnderecoChegada" class="form-control" name="txtEnderecoChegada" value="" />
                     </div>
                     <div class="divisor"></div>
                     <label>Pontos de embarque:</label>
                     <div class="form-group info-gerar-rota">
                         <div id="listaPontos">
-                        </div>                    
-                    </div>    
-                    <button type="button" class="btn btn-info info-gerar-rota" onclick="index.novoPonto();"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span> Novo Ponto</button>                    
+                        </div>
+                    </div>
+                    <button type="button" class="btn btn-info info-gerar-rota" onclick="index.novoPonto();"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span> Novo Ponto</button>
                     <button type="submit" id="btnCalcularRota" onclick="mapa.calcularRota();" class="btn btn-primary info-gerar-rota"><span class="glyphicon glyphicon-road" aria-hidden="true"></span> Calcular Rota</button><br /><br />
                     <a href="javascript:void(0);" class="lnk-endereco-geo info-gerar-rota" onclick="index.preencherDadosGeo();$(this).hide();">Endereços Pré-definidos</a>
                 </form>
@@ -51,8 +50,8 @@
                                 <th>Endereço</th>
                             </tr>
                         </thead>
-                        <tbody>                            
-                        </tbody>                            
+                        <tbody>
+                        </tbody>
                     </table>
                     <button type="button" class="btn btn-default" onclick="location.reload();">Nova Pesquisa</button>
                 </div>
@@ -62,15 +61,14 @@
                     <div class="alert alert-success info-resultado-rota" role="alert">
                         <div id="trajeto-texto"></div>
                     </div>
-                    
+
             </div>
 		</div>
 	</div>
 <%- include layouts/footer.ejs %>
-        <script type="text/javascript" src="/../js/pages/index.js"></script>
 <script>
     $(document).ready(function(){
-        index.init();        
+        index.init();
     });
 </script>
 </html>

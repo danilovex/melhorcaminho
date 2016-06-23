@@ -8,11 +8,6 @@ var routes = require('./routes');
 var http = require('http');
 var path = require('path');
 
-
-//load routes
-var customers = require('./routes/customers');
-var api = require('./routes/api');
-
 var app = express();
 
 var connection  = require('express-myconnection');
@@ -59,19 +54,6 @@ app.use(
 );
 
 app.get('/', routes.index);
-app.get('/atendimento', routes.atendimento);
-app.get('/ambulancias', routes.ambulancias);
-app.get('/chamados', routes.chamados);
-app.get('/customers', customers.list);
-app.get('/customers/add', customers.add);
-app.post('/customers/add', customers.save);
-app.get('/customers/delete/:id', customers.delete_customer);
-app.get('/customers/edit/:id', customers.edit);
-app.post('/customers/edit/:id',customers.save_edit);
-
-//apis
-app.post('/api/login', api.login);
-
 
 app.use(app.router);
 
